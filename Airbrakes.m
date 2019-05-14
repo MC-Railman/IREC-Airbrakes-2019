@@ -19,8 +19,8 @@
 %% Defining Variables
 
 % A:   Surface area of brake fins ft^2
-% Cdc: Coefficient of Drag with closed fins
 % Cdo: Coefficient of Drag with open fins
+% Cdc: Coefficient of Drag with closed fins
 % d:   Distance left to be traveled ft
 % g:   Acceleration due to gravity ft/s^2
 % h:   The height given by the altimeter ft
