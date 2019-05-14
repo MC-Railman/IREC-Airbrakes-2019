@@ -1,0 +1,1 @@
+Arduino requires the program file to be inside a folder.
