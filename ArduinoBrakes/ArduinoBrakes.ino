@@ -4,7 +4,7 @@ void setup() {
   // Establishing Known Values
   float g = 32.17;
   int hi = 0;
-  int vi = 0;
+  float vi = 0;
   float A = 0.25;
   int Cdo = 1;
   float Cdc = 0.75;
@@ -14,20 +14,26 @@ void setup() {
   int v = 0;
 
   // Establishing Input Values
+  /* This line is done to read input from the user. 
+   * If the values for the mass and desired apogee can be coded beforehand,
+   * it would make this program a lot more simple.
+   */ 
 
-  /* TODO:
-   *  It's apparently pretty complicated to actually read input from a user
-   *  so this next part may take a day or so to figure out
-   */
+  Serial.begin(9600);
 
-  // m = Read from input: mass in slugs
-  // ho = Read from input: input desired apogee
-  // d = ho - hi
+  Serial.print("Input mass of rocket in slugs");
+  while (Serial.available() == 0) {}
+  float m = Serial.read();
+
+  Serial.print("Input the desired apogee in feet");
+  while (Serial.available() == 0) {}
+  float ho = Serial.read();
+  
+  float d = ho - hi;
   
   // Finding the Values
-
-  // vo = d * 2 / t - vi
-  // vi = vo
+  float vo = (d * 2) / (t - vi);
+  vi = vo;
 }
 
 void loop() {
